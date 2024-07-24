@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7259787304",
+    "project_id": "tictacpro-b5942",
+    "storage_bucket": "tictacpro-b5942.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7259787304:android:3987d01cd53540bae9a51d",
+        "android_client_info": {
+          "package_name": "com.sait.tictacpro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbaV8GF9TozYgvwMXn6zyM2tx0M__Z4GQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
