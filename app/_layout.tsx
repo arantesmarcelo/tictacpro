@@ -1,3 +1,4 @@
+"use client";
 import {
   DarkTheme,
   DefaultTheme,
@@ -21,6 +22,8 @@ export default function RootLayout() {
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
 
+  const [loggedIn, setLoggedIn] = useState(false);
+
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
@@ -30,8 +33,6 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
-
-  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <>
@@ -43,8 +44,8 @@ export default function RootLayout() {
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
-        // </ThemeProvider>
       ) : (
+        // </ThemeProvider>
         <LoginPage onLogin={(loggedIn: boolean) => setLoggedIn(loggedIn)} />
       )}
     </>
