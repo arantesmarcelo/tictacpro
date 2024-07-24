@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "newexpoapp",
-    "slug": "newexpoapp",
+    "name": "tictacpro",
+    "slug": "tictacpro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
