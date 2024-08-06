@@ -1,4 +1,5 @@
 "use client";
+
 import {
   DarkTheme,
   DefaultTheme,
@@ -7,61 +8,51 @@ import {
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import LoginPage from "./login";
-
-import auth from "@react-native-firebase/auth";
+import { Text, View } from "react-native";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  //firebase
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState();
-
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
 
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  function onAuthStateChanged(user: any) {
-    setUser(user);
-    if (initializing) setInitializing(false);
-  }
+  const [loggedIn, setLoggedIn] = useState(true);
 
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
+      setInitializing(false);
     }
   }, [loaded]);
 
-  if (!loaded) {
+  if (!loaded || initializing) {
     return null;
   }
 
-  useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-    return subscriber;
-  }, []);
-
-  if (initializing) return null;
-
-  if (!user) {
-    return <LoginPage onLogin={(loggedIn: boolean) => setLoggedIn(loggedIn)} />;
-  }
-
+  console.log("LoggedIn:", loggedIn); // Debugging log
+  
   return (
     <>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
+      {loggedIn ? (
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      ) : (
+        <View style={{backgroundColor: 'red'}}>
+          <Text>To do: Login</Text>
+          <LoginPage onLogin={(loggedIn: boolean) => setLoggedIn(loggedIn)} />
+        </View>
+      )}
     </>
   );
 }

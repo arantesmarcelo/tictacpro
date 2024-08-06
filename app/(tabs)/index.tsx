@@ -1,4 +1,4 @@
-import { View, Text } from "@ant-design/react-native";
+import { View, Text } from "react-native";
 import globalStyles from "../styles/global";
 
 export default function HomeScreen() {

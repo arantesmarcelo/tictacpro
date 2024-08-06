@@ -1,4 +1,4 @@
-import { Text, View } from "@ant-design/react-native";
+import { Text, View } from "react-native";
 import globalStyles from "../styles/global";
 
 export default function Play() {
