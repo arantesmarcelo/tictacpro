@@ -10,9 +10,37 @@ const globalStyles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  scrollContainer: {
+    flex: 1,
+    backgroundColor: colors.background,
+    paddingTop: 50,
+  },
+  logoContainer: {
+    margin: 40,
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    resizeMode: 'contain',
+  },
+  section: {
+    paddingTop: 20,
+  },
   header: {
     flex: 3,
-    width: "100%",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  playButton: {
+    backgroundColor: '#007bff',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 5,
+  },
+  playButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
   headerprofileinfo: {
     width: "100%",
@@ -77,6 +105,23 @@ const globalStyles = StyleSheet.create({
     borderRadius: 5,
     ...typography.body,
   },
+  headerText: {
+    color: colors.text,
+    ...typography.body,
+    fontSize: 36,
+    fontStyle: 'bold',
+    marginLeft: 10,
+  },
+  listText: {
+    color: colors.text,
+    ...typography.body,
+    marginLeft: 20
+  },
+  listSubText: {
+    color: colors.text,
+    ...typography.body,
+    marginLeft: 40
+  }
 });
 
 export default globalStyles;
