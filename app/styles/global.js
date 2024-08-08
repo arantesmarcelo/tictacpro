@@ -99,6 +99,7 @@ const globalStyles = StyleSheet.create({
     color: "gray",
     textAlign: "center",
   },
+  
   profile_name: {
     fontSize: 32,
     color: "black",
@@ -108,7 +109,7 @@ const globalStyles = StyleSheet.create({
     ...typography.body,
   },
   profileInfo: {
-    height: 250,
+    height: "auto",
     paddingVertical: 20,
     flexDirection: "column",
     padding: 20,

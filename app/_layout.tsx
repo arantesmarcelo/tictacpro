@@ -25,7 +25,7 @@ export default function RootLayout() {
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
 
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     if (loaded) {
@@ -39,7 +39,7 @@ export default function RootLayout() {
   }
 
   console.log("LoggedIn:", loggedIn); // Debugging log
-  
+
   return (
     <>
       {loggedIn ? (
@@ -48,10 +48,7 @@ export default function RootLayout() {
           <Stack.Screen name="+not-found" />
         </Stack>
       ) : (
-        <View style={{backgroundColor: 'red'}}>
-          <Text>To do: Login</Text>
-          <LoginPage onLogin={(loggedIn: boolean) => setLoggedIn(loggedIn)} />
-        </View>
+        <LoginPage onLogin={(loggedIn: boolean) => setLoggedIn(loggedIn)} />
       )}
     </>
   );
