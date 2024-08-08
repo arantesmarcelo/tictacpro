@@ -44,8 +44,11 @@ const globalStyles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
     backgroundColor: colors.secondary,
     borderRadius: 20,
+    margin: 10,
   },
   card_number: {
     fontSize: 24,
@@ -69,12 +72,13 @@ const globalStyles = StyleSheet.create({
     height: 250,
     paddingVertical: 20,
     flexDirection: "column",
-    justifyContent: "space-between",
+    padding: 20,
   },
   textInput: {
     backgroundColor: colors.background,
     padding: spacing.sm,
     borderRadius: 5,
+    margin: spacing.lg,
     ...typography.body,
   },
 });

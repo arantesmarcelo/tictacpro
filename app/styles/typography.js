@@ -4,6 +4,7 @@ const typography = StyleSheet.create({
   header: {
     fontSize: 24,
     fontWeight: 'bold',
+    marginVertical: 10,
   },
   subheader: {
     fontSize: 20,
@@ -11,6 +12,16 @@ const typography = StyleSheet.create({
   },
   body: {
     fontSize: 16,
+    fontWeight: 'normal',
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: 'normal',
+    color: 'gray',
+  },
+  input: {
+    fontSize: 18,
+    fontWeight: 'normal',
   },
   // Add other typography styles
 });
