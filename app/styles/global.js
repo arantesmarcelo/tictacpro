@@ -47,6 +47,10 @@ const globalStyles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 5,
+    width: 150,
+    marginTop: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   playButtonText: {
     color: '#fff',
