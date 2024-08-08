@@ -1,7 +1,10 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import colors from "./colors";
 import spacing from "./spacing";
 import typography from "./typography";
+
+const { width } = Dimensions.get('window');
+const boardSize = width * 0.8;
 
 const globalStyles = StyleSheet.create({
   container: {
@@ -9,6 +12,14 @@ const globalStyles = StyleSheet.create({
     backgroundColor: colors.background,
     justifyContent: "center",
     alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  boardContainer: {
+    flex: 1,
+    backgroundColor: colors.background,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 15,
   },
   scrollContainer: {
     flex: 1,
@@ -121,7 +132,43 @@ const globalStyles = StyleSheet.create({
     color: colors.text,
     ...typography.body,
     marginLeft: 40
-  }
+  },
+  welcome: {
+    color: colors.text,
+    ...typography.body,
+    fontSize: 36,
+    fontStyle: 'bold',
+    justifyContent: 'center',
+  },
+  board: {
+    width: boardSize,
+    height: boardSize,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 30,
+  },
+  row: {
+    flexDirection: 'row'
+  },
+  square: {
+    flex: 1,
+    borderWidth:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  squareText: {
+    fontSize: boardSize / 6,
+  },
+  status: {
+    fontSize: 24,
+    marginTop: 60,
+  },
+  restartGameButtonContainer: {
+    marginBottom: 60,
+  },
+  startGameButtonContainer: {
+    marginTop: 60,
+  },
 });
 
 export default globalStyles;

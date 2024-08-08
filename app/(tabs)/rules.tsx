@@ -7,7 +7,7 @@ import { Button } from '@rneui/base';
 export default function Rules() {
   return (
     <ScrollView style={globalStyles.scrollContainer}>
-      <View id="header" style={globalStyles.header}>
+      <View id="header" style={globalStyles.section}>
         <Ionicons
           style={{ marginLeft: 10 }}
           name="apps-sharp"
